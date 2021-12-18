@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import ExamSearch from './pages/ExamSearch';
 import ExamSearchByProfessor from './pages/ExamSearchByProfessor';
 import ExamSearchByCourse from './pages/ExamSearchByCourse';
+import ExamList from './pages/ExamList';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           component={ExamSearchByProfessor}
         />
         <Route path='/exams/courses' exact component={ExamSearchByCourse} />
+        <Route path='/exams/list' exact component={ExamList} />
       </Switch>
     </BrowserRouter>
   );
