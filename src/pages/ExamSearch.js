@@ -7,13 +7,13 @@ import { ImBooks } from 'react-icons/im';
 const ExamSearch = () => {
   return (
     <Container>
-      <Link to={'/exams'}>
+      <Link to={'/exams/professors'}>
         <LargeButton
           icon={<FaChalkboardTeacher className={'button__icon'} />}
           text='Professor'
         />
       </Link>
-      <Link to={'/exams'}>
+      <Link to={'/exams/courses'}>
         <LargeButton
           icon={<ImBooks className={'button__icon'} />}
           text='Disciplina'
