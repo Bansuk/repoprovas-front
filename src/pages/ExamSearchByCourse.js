@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import TypeButton from '../components/TypeButton';
 
@@ -6,7 +7,9 @@ const ExamSearchByCourse = () => {
     <Container>
       <Term>
         <h1>1 Periodo</h1>
-        <TypeButton name='professor' quantity='10' />
+        <Link to='/exams/list'>
+          <TypeButton name='professor' quantity='10' />
+        </Link>
       </Term>
     </Container>
   );
