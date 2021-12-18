@@ -3,6 +3,7 @@ import GlobalStyle from './styles/styleGlobal';
 import Home from './pages/Home';
 import ExamSearch from './pages/ExamSearch';
 import ExamSearchByProfessor from './pages/ExamSearchByProfessor';
+import ExamSearchByCourse from './pages/ExamSearchByCourse';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           exact
           component={ExamSearchByProfessor}
         />
+        <Route path='/exams/courses' exact component={ExamSearchByCourse} />
       </Switch>
     </BrowserRouter>
   );
