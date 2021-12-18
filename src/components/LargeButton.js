@@ -3,26 +3,13 @@ import {
   IconContainer,
   TitleContainer,
 } from '../styles/styleLargeButton';
-import { AiOutlineSearch } from 'react-icons/ai';
-import { GrDocumentText } from 'react-icons/gr';
 
-const LargeButton = ({ type }) => {
+const LargeButton = ({ icon, text }) => {
   return (
     <Button>
-      <IconContainer>
-        {type === 'send' ? (
-          <GrDocumentText className={'button__icon'} />
-        ) : (
-          <AiOutlineSearch className={'button__icon'} />
-        )}
-      </IconContainer>
-
+      <IconContainer>{icon}</IconContainer>
       <TitleContainer>
-        {type === 'send' ? (
-          <span>Enviar Prova</span>
-        ) : (
-          <span>Buscar Prova</span>
-        )}
+        <span>{text}</span>
       </TitleContainer>
     </Button>
   );
