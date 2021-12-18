@@ -13,7 +13,7 @@ const Home = () => {
           text='Buscar Prova'
         />
       </Link>
-      <Link to={'/exam'}>
+      <Link to={'/new'}>
         <LargeButton
           icon={<GrDocumentText className={'button__icon'} />}
           text='Enviar Prova'

@@ -5,6 +5,7 @@ import ExamSearch from './pages/ExamSearch';
 import ExamSearchByProfessor from './pages/ExamSearchByProfessor';
 import ExamSearchByCourse from './pages/ExamSearchByCourse';
 import ExamList from './pages/ExamList';
+import ExamForm from './pages/ExamForm';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <GlobalStyle />
       <Switch>
         <Route path='/' exact component={Home} />
+        <Route path='/new' exact component={ExamForm} />
         <Route path='/exams' exact component={ExamSearch} />
         <Route
           path='/exams/professors'
