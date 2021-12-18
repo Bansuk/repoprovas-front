@@ -1,18 +1,23 @@
-import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 import { Container } from '../styles/styleHome';
 import LargeButton from '../components/LargeButton';
-import { Link } from 'react-router-dom';
+import { AiOutlineSearch } from 'react-icons/ai';
+import { GrDocumentText } from 'react-icons/gr';
 
 const Home = () => {
-  const history = useHistory();
-
   return (
     <Container>
       <Link to={'/exams'}>
-        <LargeButton type='search' />
+        <LargeButton
+          icon={<AiOutlineSearch className={'button__icon'} />}
+          text='Buscar Prova'
+        />
       </Link>
       <Link to={'/exam'}>
-        <LargeButton type='send'></LargeButton>
+        <LargeButton
+          icon={<GrDocumentText className={'button__icon'} />}
+          text='Enviar Prova'
+        ></LargeButton>
       </Link>
     </Container>
   );
