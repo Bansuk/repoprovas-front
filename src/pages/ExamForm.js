@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { getCategories } from '../services/repoprovas.services';
 import { isExamInputValid } from '../validations/examValidation';
 
 const ExamForm = () => {
@@ -9,6 +10,13 @@ const ExamForm = () => {
   const [professor, setProfessor] = useState('');
   const [examLink, setExamLink] = useState('');
   const [errorHandler, setErrorHandler] = useState({});
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    getCategories()
+      .then(res => setCategories(res.data))
+      .catch(err => alert(err));
+  });
 
   const postNewExam = e => {
     e.preventDefault();
@@ -46,7 +54,9 @@ const ExamForm = () => {
           <option value='' disabled selected>
             Categoria
           </option>
-          <option value='volvo'>Volvo</option>
+          {categories.map(category => (
+            <option value={category.name}>{category.name}</option>
+          ))}
         </select>
         <select
           value={course}
