@@ -1,10 +1,22 @@
 import styled from 'styled-components';
 import TypeButton from '../components/TypeButton';
+import { useEffect, useState } from 'react';
+import { getProfessors } from '../services/repoprovas.services';
 
 const ExamSearchByProfessor = () => {
+  const [professors, setProfessors] = useState([]);
+
+  useEffect(() => {
+    getProfessors()
+      .then(res => setProfessors(res.data))
+      .catch(err => alert(err));
+  });
+
   return (
     <Container>
-      <TypeButton name='professor' quantity='10' />
+      {professors.map(professor => (
+        <TypeButton name={professor.name} quantity={professor.count} />
+      ))}
     </Container>
   );
 };
